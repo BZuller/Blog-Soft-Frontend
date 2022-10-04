@@ -20,7 +20,7 @@ function Login(): React.ReactElement {
     },
   });
 
-  const [cpf, setCpf] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const navigate = useHistory();
   const auth = useContext(AuthContext);
@@ -28,7 +28,7 @@ function Login(): React.ReactElement {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleSubmit = async (expect: React.FormEvent<HTMLFormElement>) => {
     expect.preventDefault();
-    const token = await auth.signIn(cpf, password);
+    const token = await auth.signIn(email, password);
     if (token) {
       HttpClient.api.defaults.headers.common.Authorization = `Bearer ${token}`;
       navigate.push('/List');
@@ -81,7 +81,7 @@ function Login(): React.ReactElement {
                 id="email"
                 label="Email"
                 name="email"
-                onChange={(event) => setCpf(event.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
                 autoFocus
               />
               <TextField
