@@ -6,7 +6,7 @@ interface IMetatag {
   description?: string;
 }
 
-const PROJECT_NAME = 'Backoffice | ';
+const PROJECT_NAME = 'Brug';
 
 const Metatag = ({ title, description }: IMetatag): React.ReactElement => (
   <Helmet>

@@ -8,7 +8,7 @@ const defaultHeaders = {
 };
 
 const axiosConfig = axios.create({
-  baseURL: `${process.env.REACT_APP_API_URL}`,
+  baseURL: `http://localhost:3001`,
   timeout: 30000,
   headers: defaultHeaders,
 });

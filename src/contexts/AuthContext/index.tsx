@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }: IAuthProvider): React.ReactElement =>
     localStorage.removeItem('userToken');
   };
 
-  const signIn = async (email: string, password: string): Promise<string | undefined> => {
+  async function signIn(email: string, password: string): Promise<string | undefined> {
     try {
       const data = await SessionService.login(email, password);
 
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }: IAuthProvider): React.ReactElement =>
       }
       return undefined;
     }
-  };
+  }
 
   return (
     <AuthContext.Provider

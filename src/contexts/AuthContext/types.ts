@@ -1,7 +1,7 @@
 export interface IAuthContext {
   token?: string | null;
   user: IContextUser;
-  signIn: (cpf: string, password: string) => Promise<string | undefined>;
+  signIn: (email: string, password: string) => Promise<string | undefined>;
   signOut: () => void;
   signed: boolean;
 }

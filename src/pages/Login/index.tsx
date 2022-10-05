@@ -31,7 +31,7 @@ function Login(): React.ReactElement {
     const token = await auth.signIn(email, password);
     if (token) {
       HttpClient.api.defaults.headers.common.Authorization = `Bearer ${token}`;
-      navigate.push('/List');
+      navigate.push('/');
     }
   };
   return (
@@ -50,16 +50,7 @@ function Login(): React.ReactElement {
       >
         <CssBaseline />
 
-        <Grid
-          item
-          xs={12}
-          sm={8}
-          md={5}
-          component={Paper}
-          elevation={6}
-          square
-          sx={{ borderRadius: '3%', height: '60vh' }}
-        >
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{ borderRadius: '3%' }}>
           <Box
             sx={{
               my: 8,
@@ -98,7 +89,7 @@ function Login(): React.ReactElement {
               <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
                 Sign In
               </Button>
-              <Button variant="outlined" fullWidth href="Actions">
+              <Button variant="outlined" fullWidth href="/Register">
                 Sign up
               </Button>
               <Grid container>
