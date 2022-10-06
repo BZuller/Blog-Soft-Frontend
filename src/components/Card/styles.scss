@@ -1,24 +1,32 @@
 .card-component {
-  width: '40px';
+  max-width: '40px';
   border: none;
   background-color: transparent;
+  margin: 1rem;
   &__header {
-    background-color: #730000;
+    background-color: #c1262e;
     color: var(--white-100);
     display: flex;
     align-items: center;
     font-size: 0.75rem;
     font-weight: var(--is-700);
     padding: 1.25rem 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   &__body {
     box-shadow: 0 0.25rem 1.25rem var(--gray-rgba);
+    background-color: #300a0a;
     color: var(--white-100);
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     border-radius: 0 0 0.5rem 0.5rem !important;
     padding: 1.5rem 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   &__footer {
     color: var(--white-100);

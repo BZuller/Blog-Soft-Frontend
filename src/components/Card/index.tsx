@@ -7,6 +7,7 @@ interface ICard extends CardProps {
   renderBody?: React.ReactNode;
   renderFooter?: React.ReactNode;
   renderCategorie?: React.ReactNode;
+  renderDate?: React.ReactNode;
   cy: string;
 }
 
@@ -15,6 +16,7 @@ const CardComponent = ({
   renderBody,
   renderFooter,
   renderCategorie,
+  renderDate,
   cy,
   ...props
 }: ICard): React.ReactElement => (
@@ -23,7 +25,7 @@ const CardComponent = ({
     <Card.Body className="card-component__body">
       {renderBody}{' '}
       <Card.Footer className="card-component__footer">
-        {renderFooter} on category {renderCategorie}
+        {renderFooter} on category {renderCategorie} at {renderDate}
       </Card.Footer>
     </Card.Body>
   </Card>

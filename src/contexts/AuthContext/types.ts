@@ -7,8 +7,8 @@ export interface IAuthContext {
 }
 
 export interface IContextUser {
-  id?: string;
-  name?: string;
+  id?: string | null;
+  name?: string | null;
 }
 
 export interface IAuthProvider {

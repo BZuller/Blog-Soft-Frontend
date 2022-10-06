@@ -25,8 +25,7 @@ function Login(): React.ReactElement {
   const navigate = useHistory();
   const auth = useContext(AuthContext);
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const handleSubmit = async (expect: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (expect: React.FormEvent<HTMLFormElement>): Promise<void> => {
     expect.preventDefault();
     const token = await auth.signIn(email, password);
     if (token) {
@@ -45,7 +44,7 @@ function Login(): React.ReactElement {
           width: '100vw',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#401b1b',
+          backgroundColor: '#1a1a1a',
         }}
       >
         <CssBaseline />

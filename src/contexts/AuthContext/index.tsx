@@ -13,8 +13,12 @@ export const AuthProvider = ({ children }: IAuthProvider): React.ReactElement =>
 
   useEffect(() => {
     const userToken = localStorage.getItem('userToken');
+    const userId = localStorage.getItem('user');
 
     if (userToken) {
+      if (userId) {
+        setUser({ id: userId });
+      }
       setToken(userToken);
       httpClient.api.defaults.headers.common.Authorization = `Bearer ${token}`;
     }
@@ -34,9 +38,11 @@ export const AuthProvider = ({ children }: IAuthProvider): React.ReactElement =>
       const { token: userToken, user: userData } = data;
 
       setToken(userToken);
-      setUser({ id: userData.id, name: userData.email });
+      setUser(userData);
 
       localStorage.setItem('userToken', userToken);
+      localStorage.setItem('userId', userData.id);
+      localStorage.setItem('userName', userData.username);
       return userToken;
     } catch (error) {
       if (error) {
